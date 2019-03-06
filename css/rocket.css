@@ -1,5 +1,14 @@
+body{
+	font-family: 'helvetica', 'arial', sans-serif;
+}
+
+h1{
+	color: white;
+}
+
+
 .left{
-	background-color: aquamarine;
+	background-color: black;
 	position:fixed;
 	width: 50%;
 	height: 100%;
@@ -7,8 +16,30 @@
 	left: 0;
 }
 
+.interface{
+	text-align: center;
+	padding: 20px;
+
+}
+
+a.button{
+	display: inline-block;
+	background-color: white;
+	color: black;
+	padding: 20px 40px;
+	text-decoration: none;
+	border-radius: 10px;
+	text-transform: uppercase;
+	transition: color 300ms;
+}
+
+a:hover{
+	color: red;
+}
+
+
 .right{
-	background-color: aliceblue;
+	background-image: url('../img/night.gif');
 	position:fixed;
 	width: 50%;
 	height: 100%;
@@ -18,7 +49,7 @@
 }
 
 .ground{
-	background-color: green;
+	background: url('../img/ground.png') no-repeat center 0;
 	position: absolute;
 	bottom: 10px;
 	left: 0;
@@ -27,13 +58,29 @@
 
 }
 
+.nervous{
+	position: absolute;
+	bottom: 220px;
+	left: 50%;
+	margin-left:-180px;
+	background: url('../img/nervous.png') no-repeat 0 0;
+	width: 223px;
+	height: 100px;
+	display: none;
+}
+
+.nervous.show{
+	display: block;
+
+}
 .rocket{
 	position: absolute;
 	left: 50%;
-	bottom: 20px;
-	width: 20px;
-	height: 100px;
-	background-color: blue;
+	bottom: -13px;
+	width: 142px;
+	height: 272px;
+	margin-left: -71.5px;
+	background: url('../img/rocket-state1.png') no-repeat 00;
 	transition: bottom 10000ms;
 
 /* transition can be from width and height wise and the more time is placed = more time it will take to transition therefore you want a quick response you will want to use ms instead. We are launching a rocket so we will want to transition from the bottom up */ 
@@ -42,6 +89,25 @@
 
 body.body-state1 .rocket {
 	transition: none;
+}
+
+/* rocket bg image*/
+body.body-state2 .rocket{
+	background-image: url('../img/rocket-state2.gif');
+
+}
+
+body.body-state3 .rocket,
+body.body-state4 .rocket{
+	background-image: url('../img/rocket-state3.gif');
+
+}
+
+body.body-state5 .rocket{
+	background-image: url('../img/boom.png');
+	width: 209px;
+	height: 200px;
+	margin-left: -104.5px
 }
 
 body.body-state3 .rocket,

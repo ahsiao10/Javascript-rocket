@@ -8,8 +8,8 @@ var changeState = function (state) {
 	clearInterval(timer);
 	countdownNumber = 10;
 		document.getElementById('countdown').innerHTML = countdownNumber; 
-/* document.body.className changes body class inside JS and is the fastest way to remove a class from <body>. */
-/*clearInterval is not in state2 becuase the user can choose to abort so it doesn't have to wait till timer gets to 0*/
+//document.body.className changes body class inside JS and is the fastest way to remove a class from <body>. 
+//clearInterval is not in state2 becuase the user can choose to abort so it doesn't have to wait till timer gets to 0
 
 
 /*.innerHTML property sets or returns the HTML content (innerHTML) of an element. */
@@ -21,6 +21,14 @@ if (state ==2){
 		countdownNumber = countdownNumber -1;
 		document.getElementById('countdown').innerHTML = countdownNumber; 
 		
+		if (countdownNumber > 4 && countdownNumber <= 7){
+
+			document.getElementById('nervous').className = 'nervous show';
+
+		} else {
+			document.getElementById('nervous').className = 'nervous';
+		}
+
 		if (countdownNumber <= 0) {
 			changeState(3);
 		};
@@ -33,7 +41,7 @@ if (state ==2){
 		console.log('randomNumber:', randomNumber)
 
 //success
-		if (randomNumber > 5) {
+		if (randomNumber > 2) {
 			changeState(4);
 
 		} else {
